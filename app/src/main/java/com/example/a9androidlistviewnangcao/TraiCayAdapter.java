@@ -5,6 +5,8 @@ import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -67,6 +69,10 @@ public class TraiCayAdapter extends BaseAdapter
         viewHolder.textView1.setText(traiCay.getTen());
         viewHolder.textView2.setText(traiCay.getMoTa());
         viewHolder.imageView1.setImageResource(traiCay.getHinhAnh());
+
+        // gán animation
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.scale_list);
+        convertView.startAnimation(animation);
         return convertView;
     }
 }
